@@ -1,0 +1,17 @@
+<div class="main">
+  <div *ngIf="!load">
+    <img class="loader" src="assets/Iphone-spinner-2.gif" alt="loader" />
+  </div>
+  <div *ngIf="load" class="container">
+    <div *ngFor="let inside of products;let i=index" class="insider">
+      <p>{{inside.title}}</p>
+      <hr style="width: 35%;" />
+      <p><span>Price: </span>₹{{inside.price}}</p>
+      <img [src]="inside.image" alt="" />
+      <br />
+      <button class="add" (click)="clicked(inside.id,inside.price)">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
